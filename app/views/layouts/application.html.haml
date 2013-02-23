@@ -19,7 +19,12 @@
   %body
     = render "/header"
     .content
-      = yield
+      .main
+        .left-nav
+          = render "/left_nav"
+        .yield
+
+          = yield
 
   %footer
     = render "/footer"
