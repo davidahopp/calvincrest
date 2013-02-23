@@ -1,4 +1,9 @@
 
 .footer
   .content
-    hello
+    .pages
+      - main_pages.each do |page|
+        = link_to page.title.upcase, refinery.url_for(page.url)
+
+    .copyright
+      © #{Date.today.year} Calvin Crest Camp Conference & Retreat Center

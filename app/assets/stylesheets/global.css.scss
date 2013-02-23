@@ -18,7 +18,7 @@ body{
     a{
       color: white;
       &:hover{
-        color: $hover_green;
+        color: $light_green;
       }
     }
 
@@ -154,9 +154,43 @@ body{
   .footer{
     clear: both;
     .content{
+      position: relative;
       background-color: $main_green;
       color: white;
+      height: 50px;
+
+      .pages{
+        display: table;
+        margin: 0 auto;
+        padding-top: 15px;
+
+        a{
+          color: white;
+          margin-right: 10px;
+          padding-right: 10px;
+          border-right: $light_green solid 1px;
+
+          &:last-child{
+            border-right: none;
+          }
+
+          &:hover{
+            color: $light_green;
+            text-decoration: none;
+          }
+        }
+      }
+
+      .copyright{
+        bottom: -25px;
+        right: 20px;
+        position: absolute;
+        color: black;
+        font-size: 12px;
+      }
+
     }
+    margin-bottom: 100px;
   }
 
   background: #B79F87;
