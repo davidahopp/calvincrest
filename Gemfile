@@ -6,9 +6,7 @@ gem 'rails', '3.2.11'
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
 gem 'pg'
-gem 'capistrano'
-gem 'rvm-capistrano'
-gem 'seedbank'
+
 gem 'haml-rails'
 
 
@@ -22,6 +20,12 @@ group :assets do
 
   gem 'libv8', '~> 3.11.8'
   gem 'therubyracer', '=0.11.0beta8'
+end
+
+group :development do
+  gem 'capistrano'
+  gem 'rvm-capistrano'
+  gem 'seedbank'
 end
 
 gem 'jquery-rails', '~> 2.0.0'

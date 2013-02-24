@@ -186,6 +186,23 @@ body{
         background-color: white;
         width: 635px;
         float: left;
+        margin-bottom: 20px;
+
+        #body_content_title{
+          background-color: $light_green;
+          margin-top: 0px;
+          padding: 10px 10px;
+          color: $main_green;
+        }
+
+        .text-align-center{
+          text-align: center;
+        }
+
+        td{
+          border: black solid 1px;
+          padding: 10px;
+        }
 
       }
 
