@@ -1,0 +1,18 @@
+
+@import 'colors';
+
+@mixin text-color($class, $color){
+
+  .text-color-#{$class}{
+    color: $color;
+  }
+
+}
+
+
+@include text-color('logo-green', $main_green);
+@include text-color('logo-orange', $main_orange);
+@include text-color('light-green', $light_green);
+@include text-color('red', red);
+@include text-color('yellow', yellow);
+@include text-color('blue', blue);
