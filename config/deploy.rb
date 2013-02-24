@@ -24,10 +24,6 @@ ssh_options[:keys] = ["/home/vagrant/.ssh/dahkey.pem"]
 # Add RVM's lib directory to the load path.
 $:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 
-# Load RVM's capistrano plugin.
-require "rvm/capistrano"
-require "bundler/capistrano"
-
 set :rvm_ruby_string, '1.9.3'
 set :rvm_type, :user
 set :bundle_without,  [:development, :test]
@@ -48,18 +44,18 @@ namespace :deploy do
   end
 end
 
-namespace :assets do
-  task :precompile do
-    run "cd #{current_path} && bundle exec rake assets:precompile"
-  end
-  task :clean do
-    run "cd #{current_path} && bundle exec rake assets:clean"
-  end
-  task :cleanup do
-    assets.clean
-    assets.precompile
-  end
-end
+#namespace :assets do
+#  task :precompile do
+#    run "cd #{current_path} && bundle exec rake assets:precompile"
+#  end
+#  task :clean do
+#    run "cd #{current_path} && bundle exec rake assets:clean"
+#  end
+#  task :cleanup do
+#    assets.clean
+#    assets.precompile
+#  end
+#end
 
 namespace :db do
 
@@ -102,7 +98,6 @@ after "bundle:install", "db:setup"
 after "db:setup", "db:migrate"
 after "db:migrate", "db:set_version"
 after "deploy:restart", "deploy:cleanup"
-before "deploy:restart", "assets:cleanup"
 
 before "deploy:rollback", "db:rollback"
 after "deploy:rollback:revision", "bundle:install"

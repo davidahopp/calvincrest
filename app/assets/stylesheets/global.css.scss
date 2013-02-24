@@ -127,10 +127,12 @@ body{
             li{
               padding: 5px;
               position: relative;
-              border: #808080 solid 1px;
+              border-left: #808080 solid 1px;
+              border-top: #808080 solid 1px;
+              border-right: #808080 solid 1px;
 
               &:last-child{
-                border-top: none;
+                border-bottom: #808080 solid 1px;
               }
 
               a{
