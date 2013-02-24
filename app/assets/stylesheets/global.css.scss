@@ -227,6 +227,14 @@ body{
         float: left;
         margin-bottom: 20px;
 
+        a{
+          color: $main_green;
+          &:hover{
+            color: $light_green;
+            text-decoration: none;
+          }
+        }
+
         .top-spacer{
           background-color: $light_green;
           height: 20px;
