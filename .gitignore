@@ -96,4 +96,4 @@ vendor/extensions/**/spec/dummy
 
 
 config/database.yml
-
+config/initializers/secret_token.rb

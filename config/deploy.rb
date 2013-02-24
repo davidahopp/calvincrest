@@ -64,11 +64,11 @@ end
 namespace :db do
 
   task :setup do
-    run "ln -sf #{shared_path}/database.yml #{current_path}/config/"
+    run "ln -sf #{shared_path}/database.yml #{release_path}/config/"
   end
 
   task :migrate do
-    run "cd #{current_path} && bundle exec rake RAILS_ENV=production db:migrate"
+    run "cd #{release_path} && bundle exec rake RAILS_ENV=production db:migrate"
   end
 
   task :rollback do
@@ -98,7 +98,7 @@ namespace :db do
 
 end
 
-after "deploy:update", "db:setup"
+after "bundle:install", "db:setup"
 after "db:setup", "db:migrate"
 after "db:migrate", "db:set_version"
 after "deploy:restart", "deploy:cleanup"
