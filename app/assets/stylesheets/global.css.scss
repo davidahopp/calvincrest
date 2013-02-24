@@ -157,6 +157,13 @@ body{
 
           .contact{
             margin-top: 15px;
+            a{
+              color:  $main_green;
+              &:hover{
+                color: $light_green;
+                text-decoration: none;
+              }
+            }
 
           }
 
