@@ -106,7 +106,6 @@ before "deploy:restart", "assets:cleanup"
 
 before "deploy:rollback", "db:rollback"
 after "deploy:rollback:revision", "bundle:install"
-after "deploy:update_code", "bundle:install"
 
 #namespace :deploy do
 #  desc "Restarting mod_rails with restart.txt"
