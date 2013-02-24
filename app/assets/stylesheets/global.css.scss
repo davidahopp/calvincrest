@@ -89,6 +89,47 @@ body{
         padding-left: 10px;
         padding-right: 10px;
 
+        .menu{
+          margin-top: 10px;
+          ul{
+            list-style: none;
+            background-color: $main_orange;
+            margin: 0px;
+
+            li{
+              padding: 5px;
+              position: relative;
+              border: #808080 solid 1px;
+
+              &:last-child{
+                border-top: none;
+              }
+
+              a{
+                color: black;
+                font-size: 12px;
+                &:hover{
+                  text-decoration: none;
+                }
+              }
+              ul{
+                display: none;
+              }
+              &.active{
+                background-color: $dark_orange;
+                ul{
+                  position: absolute;
+                  left: 245px;
+                  top: -1px;
+                  width: 200px;
+                  display: block;
+                }
+              }
+            }
+
+          }
+        }
+
         .contact-info{
           margin-top: 20px;
           letter-spacing: -0.07em;

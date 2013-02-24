@@ -1,5 +1,17 @@
 .menu
 
+  %ul
+    - main_pages.each do |page|
+      %li
+        = link_to page.title, refinery.url_for(page.url)
+        - children = page.children
+        - if children.length > 0
+          %ul
+            -children.each do |sub|
+              %li
+                = link_to sub.title, refinery.url_for(sub.url)
+
+
 .contact-info
   .name
     Calvin Crest Camp Conference & Retreat Center
