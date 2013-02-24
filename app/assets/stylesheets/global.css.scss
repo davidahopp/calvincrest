@@ -75,6 +75,27 @@ body{
       .fb-like{
         margin-left: 30px;
         margin-top: 20px;
+        float: left;
+      }
+
+      .links{
+        float: right;
+        margin-top: 20px;
+        margin-right: 20px;
+        font-size: 24px;
+        a{
+          margin-right: 10px;
+          border-right: $light_green solid 1px;
+          padding-right: 10px;
+
+          &:hover{
+            text-decoration: none;
+          }
+
+          &:last-child{
+            border-right: none;
+          }
+        }
       }
 
     }
