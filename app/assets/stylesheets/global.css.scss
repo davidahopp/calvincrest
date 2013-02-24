@@ -6,6 +6,10 @@ $border-radius: 10px;
 
 body{
 
+  a:hover{
+    text-decoration: none;
+  }
+
   .content{
     width: 900px;
     margin-left: auto;
@@ -253,6 +257,7 @@ body{
           min-height: 40px;
           border-bottom-left-radius: $border-radius;
           border-bottom-right-radius: $border-radius;
+
         }
 
         .text-align-center{

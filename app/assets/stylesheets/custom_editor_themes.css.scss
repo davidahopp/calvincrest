@@ -1,18 +1,23 @@
 
 @import 'colors';
 
-@mixin text-color($class, $color){
+.wym_classes{
+  z-index: 1000;
+}
 
+@mixin color($class, $color){
   .text-color-#{$class}{
     color: $color;
   }
-
+  .background-color-#{$class}{
+    background-color:  $color;
+  }
 }
 
 
-@include text-color('logo-green', $main_green);
-@include text-color('logo-orange', $main_orange);
-@include text-color('light-green', $light_green);
-@include text-color('red', red);
-@include text-color('yellow', yellow);
-@include text-color('blue', blue);
+@include color('logo-green', $main_green);
+@include color('logo-orange', $main_orange);
+@include color('light-green', $light_green);
+@include color('red', red);
+@include color('yellow', yellow);
+@include color('blue', blue);
