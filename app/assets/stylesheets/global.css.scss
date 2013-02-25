@@ -141,12 +141,12 @@ body{
             li{
               padding: 5px;
               position: relative;
-              border-left: #808080 solid 1px;
-              border-top: #808080 solid 1px;
-              border-right: #808080 solid 1px;
+              border-left: $main_green solid 1px;
+              border-top: $main_green solid 1px;
+              border-right: $main_green solid 1px;
 
               &:last-child{
-                border-bottom: #808080 solid 1px;
+                border-bottom: $main_green solid 1px;
               }
 
               a{
