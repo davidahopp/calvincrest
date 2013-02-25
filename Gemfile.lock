@@ -1,3 +1,11 @@
+GIT
+  remote: git://github.com/refinery/refinerycms-search.git
+  revision: 4e5895b92f52b91754ad838dd481bc2865cf3b17
+  branch: 2-0-stable
+  specs:
+    refinerycms-search (2.0.0)
+      refinerycms-core (~> 2.0.4)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -219,6 +227,7 @@ DEPENDENCIES
   refinerycms (~> 2.0.0)
   refinerycms-i18n (~> 2.0.0)
   refinerycms-inquiries (~> 2.0.0)
+  refinerycms-search (~> 2.0.0)!
   rvm-capistrano
   sass-rails (~> 3.2.3)
   seedbank

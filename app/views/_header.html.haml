@@ -6,9 +6,17 @@
       %a.sign-up{href: '/newsletter'}
         Sign up for our Newsletter
     .banner
-      .fb-like{"data-href" => "https://www.facebook.com/calvincrest", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
+      .facebook
+        .fb-like{"data-href" => "https://www.facebook.com/calvincrest", "data-layout" => "button_count", "data-send" => "false", "data-show-faces" => "false", "data-width" => "450"}
+      .search
+        = form_tag refinery.search_path do
+          = text_field_tag :query, {}, {:type => "search", |
+            :placeholder => "Search site for...",          |
+            :value => (params[:query] if params[:query])}  |
+          -#= submit_tag 'Go'
       .links
         %a.home{href: '/'}
           Home
         %a.contact-us{href: '/contact'}
           Contact Us
+

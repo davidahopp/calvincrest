@@ -1,3 +1,7 @@
+var calvincrest = {
+  functions: {}
+}
+
 $(function(){
 
 
