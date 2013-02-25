@@ -32,6 +32,6 @@
     = render "/footer"
 
 
-  - if @page.slug == 'directions'
+  - if @page && @page.slug == 'directions'
     :javascript
       calvincrest.functions.setupMap()
