@@ -4,12 +4,4 @@
 // e.g. skin: 'something_else'
 if (typeof(custom_wymeditor_boot_options) == "undefined") { custom_wymeditor_boot_options = {
 
-  classesItems: [
-    {name: 'text-align', rules:['left', 'center', 'right', 'justify'], join: '-'},
-    {name: 'image-align', rules:['left', 'right'], join: '-'},
-    {name: 'font-size', rules:['small', 'normal', 'large'], join: '-'},
-    {name: 'text-color', rules:['red','blue','yellow','logo-green','light-green','logo-orange'], join: '-'},
-    {name: 'background-color', rules:['red','blue','yellow','logo-green','light-green','logo-orange'], join: '-'}
-  ]
-
 }; }
