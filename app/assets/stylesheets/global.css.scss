@@ -243,8 +243,13 @@ body{
         float: left;
         margin-bottom: 20px;
 
+        .inner{
+          margin: 0 10px;
+        }
+
         a{
           color: $main_green;
+          text-decoration: underline;
           &:hover{
             color: $light_green;
             text-decoration: none;

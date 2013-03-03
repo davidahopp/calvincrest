@@ -64,5 +64,30 @@ module Calvincrest
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    config.to_prepare do
+      Refinery::PagesController.module_eval do
+        caches_page :show, :unless => proc {|c| c.signed_in? || c.flash.any? }
+        caches_page :home, :unless => proc {|c| c.signed_in? || c.flash.any? }
+      end
+
+      [
+        Refinery::Page
+      ].each do |clazz|
+        clazz.module_eval do
+          after_save :clear_static_caching!
+          after_destroy :clear_static_caching!
+
+          def clear_static_caching!
+            PageCleaner.clear_static_caching!
+          end
+          protected :clear_static_caching!
+        end
+      end
+    end
+
+
+
+
   end
 end
