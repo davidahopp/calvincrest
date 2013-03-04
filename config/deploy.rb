@@ -1,31 +1,30 @@
 require "rvm/capistrano"
 require "bundler/capistrano"
 
-set :application, "website"
+set :application, "calvincrest"
 set :repository,  "https://github.com/davidahopp/calvincrest.git"
 set :scm, :git
 set :branch, 'master'
 set :deploy_via, :remote_cache
 ssh_options[:forward_agent] = true
 set :keep_releases, 3
-# Or: `accurev`, `bzr`, `cvs`, `darcs`, `git`, `mercurial`, `perforce`, `subversion` or `none`
 
-set :deploy_to, "/home/ubuntu/www/apps/calvincrest"
+set :deploy_to, "/srv/www/apps/calvincrest"
 
-#role :web, "davidahopp.com"                          # Your HTTP server, Apache/etc
-#role :app, "davidahopp.com"                          # This may be the same as your `Web` server
-#role :db,  "davidahopp.com", :primary => true # This is where Rails migrations will run
-#role :db,  "your slave db-server here"
-server "davidahopp.com", :app, :web, :db, :primary => true
+set :bundle_dir, ''
+set :bundle_flags, '--quiet'
 
-set :user, 'ubuntu'
-ssh_options[:keys] = ["/home/vagrant/.ssh/dahkey.pem"]
+server "calvincrest.davidahopp.com", :app, :web, :db, :primary => true
+
+set :use_sudo, false
+set :user, 'sitedeploy'
+ssh_options[:keys] = ["/home/vagrant/.ssh/calvincrest.pem"]
 
 # Add RVM's lib directory to the load path.
-$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
+#$:.unshift(File.expand_path('./lib', ENV['rvm_path']))
 
 set :rvm_ruby_string, '1.9.3'
-set :rvm_type, :user
+set :rvm_type, :system
 set :bundle_without,  [:development, :test]
 
 # if you want to clean up old releases on each deploy uncomment this:
@@ -44,18 +43,6 @@ namespace :deploy do
   end
 end
 
-#namespace :assets do
-#  task :precompile do
-#    run "cd #{current_path} && bundle exec rake assets:precompile"
-#  end
-#  task :clean do
-#    run "cd #{current_path} && bundle exec rake assets:clean"
-#  end
-#  task :cleanup do
-#    assets.clean
-#    assets.precompile
-#  end
-#end
 
 namespace :db do
 
