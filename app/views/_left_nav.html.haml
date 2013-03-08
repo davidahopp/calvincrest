@@ -8,8 +8,9 @@
         - if children.length > 0
           %ul
             -children.each do |sub|
-              %li
-                = link_to sub.title, refinery.url_for(sub.url)
+              - if sub.in_menu?
+                %li
+                  = link_to sub.title, refinery.url_for(sub.url)
 
 
 .contact-info
